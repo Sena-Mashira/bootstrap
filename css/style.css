@@ -1,3 +1,10 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
 .navbar-brand {
     font-family: 'Times New Roman', Times, serif;
 }
@@ -20,7 +27,6 @@ h1 {
 }
 
 .header {
-    width: 100vw;
     height: 100vh;
     position: absolute;
     z-index: 2;
@@ -42,8 +48,15 @@ h1 {
     font-size: calc(2vw + 1vh);
 }
 
-.carousel > img {
+.carousel-item > img {
     object-position: center center;
+    width: 100vw;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.carousel-item {
+    overflow: hidden;
 }
 
 .thing {
@@ -82,7 +95,29 @@ h1 {
     display: flex;;
     flex-direction: column;
     justify-content: center;
+    z-index: 1;
+    font-weight: 700;
     /* background-color: whitesmoke; */
+}
+
+.bg {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: black;
+    background-image: url('/assets/wave.avif');
+    z-index: 0;
+    opacity: .90;
+    filter: blur(5px);
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail > * {
+    width: 90vw;
 }
 
 @media (max-width: 500px) {
